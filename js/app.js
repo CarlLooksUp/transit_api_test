@@ -16,7 +16,11 @@ function buildStopLink(stop) {
                                 .attr("role", "button").attr("data-toggle", "collapse")
     );
     var routes_node = $("<ul>").addClass("routes collapse").attr("id", "routes_" + stop["uri"]);
-    $.each(stop["routes"], function(i, route) {
+    //enforce ordering
+    var sorted_routes = stop["routes"].sort( function(a, b) {
+      return a["name"].localeCompare(b["name"]);
+    });
+    $.each(sorted_routes, function(i, route) {
       $(routes_node).append($("<li>").text(route["name"]));
     });
     $(stop_node).append(routes_node);
@@ -44,7 +48,11 @@ $(function() {
         dataType: 'jsonp'
       })
         .done(function(data) {
-          $.each(data["stops"], function(i, stop) {
+          //enforce ordering
+          var sorted_stops = data["stops"].sort( function(a, b) {
+            return a["name"].localeCompare(b["name"]);
+          });
+          $.each(sorted_stops, function(i, stop) {
             $("#target").append(buildStopLink(stop));
           });
           cache[slug] = data;
