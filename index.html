@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transit information API test - Carl Morrissey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-med-12">
+
+					<h4>Choose a station</h4>
+					<form id="stationSelect" class="form-horizontal">
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="input-group">
+									<input class="form-control" id="stationSlug" type="text" placeholder="Input a station slug" />
+									<div class="input-group-btn">
+										<input type="submit" class="btn" value="Submit">
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="row">
+						<div class="col-lg-12">
+							<ul id="target" class="list-unstyled">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
